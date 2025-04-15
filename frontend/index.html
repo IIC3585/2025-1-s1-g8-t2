@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trabajo 2 - Grupo 8 - Sección 1</title>
+</head>
+<body>
+  <h1>Imagen WASM</h1>
+  <button id="multiply-btn">Multiplicar</button>
+  <script type="module">
+    import init, { test_wasm } from "./pkg/img_processing.js";
+
+    async function main() {
+      await init();
+      document.getElementById("multiply-btn").addEventListener("click", () => {
+        console.log("Resultado:", test_wasm(BigInt(3), BigInt(5))); // Debería dar 15
+      });
+    }
+
+    main();
+  </script>
+</body>
+</html>
