@@ -18,6 +18,6 @@ mod tests {
 
 // Función de prueba para WASM
 #[wasm_bindgen]
-pub fn test_wasm(left: u64, right: u64) -> u64 {
-    left * right
+pub fn invert_color(value: u8) -> u8 {
+    255 - value
 }
