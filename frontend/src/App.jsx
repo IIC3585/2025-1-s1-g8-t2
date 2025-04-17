@@ -9,6 +9,8 @@ function App() {
   const [uploadedImage, setUploadedImage] = useState(null);
   const [uploadedFile, setUploadedFile] = useState(null);
   const [wasmInitialized, setWasmInitialized] = useState(false);
+  const [newImageUrl, setNewImageUrl] = useState(null);
+  const [newImageFile, setNewImageFile] = useState(null);
 
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
@@ -48,8 +50,8 @@ function App() {
 
     const newBlob = new Blob([result], { type: fileType || 'image/jpeg' });
     const newImageUrl = URL.createObjectURL(newBlob);
-    setUploadedImage(newImageUrl);
-    
+    setNewImageUrl(newImageUrl);
+    setNewImageFile(newBlob);
   }
 
   const handleInvertColors = async () => {
@@ -68,7 +70,8 @@ function App() {
 
     const newBlob = new Blob([result], { type: fileType || 'image/jpeg' });
     const newImageUrl = URL.createObjectURL(newBlob);
-    setUploadedImage(newImageUrl);
+    setNewImageUrl(newImageUrl);
+    setNewImageFile(newBlob);
   }
 
   const handleSepia = async () => {
@@ -87,7 +90,8 @@ function App() {
 
     const newBlob = new Blob([result], { type: fileType || 'image/jpeg' });
     const newImageUrl = URL.createObjectURL(newBlob);
-    setUploadedImage(newImageUrl);
+    setNewImageUrl(newImageUrl);
+    setNewImageFile(newBlob);
   }
   
   const handleRemoveImage = () => {
@@ -95,6 +99,8 @@ function App() {
       URL.revokeObjectURL(uploadedImage);
       setUploadedImage(null);
       setUploadedFile(null);
+      setNewImageUrl(null);
+      setNewImageFile(null);
     }
   };
 
@@ -158,6 +164,13 @@ function App() {
                   alt="Uploaded preview"
                   className="max-w-full h-auto mx-auto rounded-lg shadow-lg"
                 />
+                {newImageUrl && (
+                  <img
+                    src={newImageUrl}
+                    alt="Processed preview"
+                    className="max-w-full h-auto mx-auto mt-4 rounded-lg shadow-lg"
+                  />
+                )}
                 <div className='flex flex-row justify-between'>
                   <button onClick={handleGrayscale}
                   className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
