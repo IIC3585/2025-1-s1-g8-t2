@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import initWasm, * as wasm from './wasm/img_processing.js'
+import init, { grayscale_filter, negative_filter, sepia_filter } from './wasm/img_processing.js';
 import { useDropzone } from 'react-dropzone';
 import StudentCard from './components/student-card.jsx';
 import HeroSection from './components/HeroSection.jsx';
@@ -7,9 +7,12 @@ import { FiUploadCloud } from 'react-icons/fi';
 
 function App() {
   const [uploadedImage, setUploadedImage] = useState(null);
+  const [uploadedFile, setUploadedFile] = useState(null);
+  const [wasmInitialized, setWasmInitialized] = useState(false);
 
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
+    setUploadedFile(file);
     const imageUrl = URL.createObjectURL(file);
     setUploadedImage(imageUrl);
   }, []);
@@ -29,10 +32,69 @@ function App() {
     };
   }, [uploadedImage]);
 
+  const handleGrayscale = async () => {
+    if (!uploadedImage) return;
+
+    const fileType = uploadedFile.type;
+    const arrayBuffer = await uploadedFile.arrayBuffer();
+    const uint8Array = new Uint8Array(arrayBuffer);
+
+    if (!wasmInitialized) {
+      await init();
+      setWasmInitialized(true);
+    }
+
+    const result = grayscale_filter(uint8Array);
+
+    const newBlob = new Blob([result], { type: fileType || 'image/jpeg' });
+    const newImageUrl = URL.createObjectURL(newBlob);
+    setUploadedImage(newImageUrl);
+    
+  }
+
+  const handleInvertColors = async () => {
+    if (!uploadedImage) return;
+
+    const fileType = uploadedFile.type;
+    const arrayBuffer = await uploadedFile.arrayBuffer();
+    const uint8Array = new Uint8Array(arrayBuffer);
+
+    if (!wasmInitialized) {
+      await init();
+      setWasmInitialized(true);
+    }
+
+    const result = negative_filter(uint8Array);
+
+    const newBlob = new Blob([result], { type: fileType || 'image/jpeg' });
+    const newImageUrl = URL.createObjectURL(newBlob);
+    setUploadedImage(newImageUrl);
+  }
+
+  const handleSepia = async () => {
+    if (!uploadedImage) return;
+
+    const fileType = uploadedFile.type;
+    const arrayBuffer = await uploadedFile.arrayBuffer();
+    const uint8Array = new Uint8Array(arrayBuffer);
+
+    if (!wasmInitialized) {
+      await init();
+      setWasmInitialized(true);
+    }
+
+    const result = sepia_filter(uint8Array);
+
+    const newBlob = new Blob([result], { type: fileType || 'image/jpeg' });
+    const newImageUrl = URL.createObjectURL(newBlob);
+    setUploadedImage(newImageUrl);
+  }
+  
   const handleRemoveImage = () => {
     if (uploadedImage) {
       URL.revokeObjectURL(uploadedImage);
       setUploadedImage(null);
+      setUploadedFile(null);
     }
   };
 
@@ -96,10 +158,20 @@ function App() {
                   alt="Uploaded preview"
                   className="max-w-full h-auto mx-auto rounded-lg shadow-lg"
                 />
-                <button
-                className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
-                  Modificar Imagen
-                </button>
+                <div className='flex flex-row justify-between'>
+                  <button onClick={handleGrayscale}
+                  className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                    Cambiar a escala de grises
+                  </button>
+                  <button onClick={handleInvertColors}
+                  className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                    Invertir colores
+                  </button>
+                  <button onClick={handleSepia}
+                  className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                    Aplicar Sepia
+                  </button>
+                </div>
                 <button onClick={handleRemoveImage}
                  className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
                   Quitar Imagen
