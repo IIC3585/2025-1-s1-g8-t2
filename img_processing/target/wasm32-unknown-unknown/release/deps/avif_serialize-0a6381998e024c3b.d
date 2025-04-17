@@ -1,0 +1,10 @@
+/home/rafaelfodor/Aplicaciones_Web/2025-1-s1-g8-t2/img_processing/target/wasm32-unknown-unknown/release/deps/libavif_serialize-0a6381998e024c3b.rmeta: /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/lib.rs /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/boxes.rs /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/constants.rs /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/writer.rs
+
+/home/rafaelfodor/Aplicaciones_Web/2025-1-s1-g8-t2/img_processing/target/wasm32-unknown-unknown/release/deps/libavif_serialize-0a6381998e024c3b.rlib: /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/lib.rs /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/boxes.rs /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/constants.rs /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/writer.rs
+
+/home/rafaelfodor/Aplicaciones_Web/2025-1-s1-g8-t2/img_processing/target/wasm32-unknown-unknown/release/deps/avif_serialize-0a6381998e024c3b.d: /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/lib.rs /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/boxes.rs /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/constants.rs /home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/writer.rs
+
+/home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/lib.rs:
+/home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/boxes.rs:
+/home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/constants.rs:
+/home/rafaelfodor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/avif-serialize-0.8.3/src/writer.rs:
