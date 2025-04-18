@@ -14,8 +14,8 @@
   background-color: #121212;
 
   /* Colores personalizados (dark) */
-  --color-primary: hsl(282, 100.00%, 60.00%);    /* amarillo fosforescente */
-  --color-secondary: hsl(175, 83.60%, 61.80%);   /* rojo fosforescente */
+  --color-primary: hsl(282, 100.00%, 60.00%);  
+  --color-secondary: hsl(175, 83.60%, 61.80%);  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

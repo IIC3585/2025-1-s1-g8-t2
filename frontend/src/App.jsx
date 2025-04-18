@@ -6,6 +6,7 @@ import HeroSection from './components/HeroSection.jsx';
 import { FiUploadCloud } from 'react-icons/fi';
 import TeamSection from './components/TeamSection.jsx';
 import InstructionsSection from './components/InstructionsSection.jsx';
+import { Button } from './components/ui/button.jsx';
 
 function App() {
   const [uploadedImage, setUploadedImage] = useState(null);
@@ -138,7 +139,6 @@ function App() {
               )}
             </div> )}
 
-
             {uploadedImage && (
               <div className="mt-8 text-center grid">
                 <img
@@ -154,22 +154,29 @@ function App() {
                   />
                 )}
                 <div className=" grid grid-cols-2 justify-center gap-3">
-                  <button onClick={handleGrayscale}
-                  className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors truncate">
-                    Cambiar a escala de grises
-                    </button>
-                  <button onClick={handleInvertColors}
-                    className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors truncate">
+                  <Button variant="outline"
+                  onClick={handleGrayscale}
+                  className="mt-4 gap-2 text-white bg-zinc-400 whitespace-normal break-words
+                  transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-grey-700">
+                   Cambiar a escala de grises
+                  </Button>
+                  <Button variant= "outline"
+                  onClick={handleInvertColors}
+                  className="mt-4 gap-2 text-white bg-zinc-400 whitespace-normal break-words
+                  transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-lime-500 hover:bg-lime-300">
                     Invertir colores
-                  </button>
-                  <button onClick={handleSepia}
-                  className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors truncate">
+                  </Button>
+                  <Button 
+                  onClick={handleSepia} variant= "outline"
+                  className="mt-4 gap-2 text-white bg-zinc-400 whitespace-normal break-words
+                  transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-amber-300 hover:bg-yellow-300">
                     Aplicar Sepia
-                  </button>
-                  <button onClick={handleRemoveImage}
-                  className="mt-4 gap-2 bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600 transition-colors truncate">
+                  </Button>
+                  <Button variant= "outline"
+                  onClick={handleRemoveImage}
+                  className="mt-4 gap-2 text-white bg-zinc-400 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-rose-700 hover:bg-rose-400">
                     Quitar Imagen
-                  </button>
+                  </Button>
                 </div>
               </div>
             )}

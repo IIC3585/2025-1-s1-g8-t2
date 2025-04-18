@@ -25,3 +25,14 @@ npm install
    wasm-pack build --target web --out-dir ../frontend/src/wasm
 
    ```
+
+   ## Aspecto PWA: Personalización completa de la App.
+
+   - Ya se encuentran los colores personalizados en tailwind.css, en el archivo index.css.
+   - Se instaló el Vite plugin pwa, que genera inmediatamente el manifest.webmanifest, registrando el service worker. 
+
+```bash
+
+   npm install vite-plugin-pwa --save-dev
+
+   ```
