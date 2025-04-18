@@ -18,3 +18,10 @@ npm install
    npm run dev -- --host
 
    ```
+## Para hacer build en al archivo img processing
+
+```bash
+
+   wasm-pack build --target web --out-dir ../frontend/src/wasm
+
+   ```

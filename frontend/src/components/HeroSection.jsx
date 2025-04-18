@@ -2,7 +2,7 @@
 
 export default function(){
     return(
-        <section className="bg-gradient-to-r from-blue-600 to-orange-800 text-white py-20">
+        <section className="text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold text-center mb-6">
             Trabajo 2 Web Avanzado, Grupo 8

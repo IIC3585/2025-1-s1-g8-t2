@@ -1,0 +1,11 @@
+/Users/bruno/Desktop/Web avanzado/2025-1-s1-g8-t2/img_processing/target/wasm32-unknown-unknown/release/deps/libv_frame-702856448f945c1a.rmeta: /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/lib.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/frame.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/math.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/pixel.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/plane.rs
+
+/Users/bruno/Desktop/Web avanzado/2025-1-s1-g8-t2/img_processing/target/wasm32-unknown-unknown/release/deps/libv_frame-702856448f945c1a.rlib: /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/lib.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/frame.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/math.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/pixel.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/plane.rs
+
+/Users/bruno/Desktop/Web avanzado/2025-1-s1-g8-t2/img_processing/target/wasm32-unknown-unknown/release/deps/v_frame-702856448f945c1a.d: /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/lib.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/frame.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/math.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/pixel.rs /Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/plane.rs
+
+/Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/lib.rs:
+/Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/frame.rs:
+/Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/math.rs:
+/Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/pixel.rs:
+/Users/bruno/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/v_frame-0.3.8/src/plane.rs:

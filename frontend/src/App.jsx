@@ -4,6 +4,8 @@ import { useDropzone } from 'react-dropzone';
 import StudentCard from './components/student-card.jsx';
 import HeroSection from './components/HeroSection.jsx';
 import { FiUploadCloud } from 'react-icons/fi';
+import TeamSection from './components/TeamSection.jsx';
+import InstructionsSection from './components/InstructionsSection.jsx';
 
 function App() {
   const [uploadedImage, setUploadedImage] = useState(null);
@@ -105,38 +107,18 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-primary to-secondary">
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Team Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Nuestro Equipo</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <StudentCard
-              image="https://via.placeholder.com/200"
-              name="Estudiante 1"
-              role="Desarrollador Frontend"
-            />
-            <StudentCard
-              image="https://via.placeholder.com/200"
-              name="Estudiante 2"
-              role="Desarrollador Backend"
-            />
-            <StudentCard
-              image="https://via.placeholder.com/200"
-              name="Estudiante 3"
-              role="Diseñador UI/UX"
-            />
-          </div>
-        </div>
-      </section>
+      <TeamSection />
+
+      <InstructionsSection />
 
       {/* Image Upload Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Modificador de Imágenes</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text text-white">Modificador de Imágenes</h2>
     
 
           <div className="max-w-2xl mx-auto">
@@ -171,24 +153,24 @@ function App() {
                     className="max-w-full h-auto mx-auto mt-4 rounded-lg shadow-lg"
                   />
                 )}
-                <div className='flex flex-row justify-between'>
+                <div className=" grid grid-cols-2 justify-center gap-3">
                   <button onClick={handleGrayscale}
-                  className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                  className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors truncate">
                     Cambiar a escala de grises
-                  </button>
+                    </button>
                   <button onClick={handleInvertColors}
-                  className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                    className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors truncate">
                     Invertir colores
                   </button>
                   <button onClick={handleSepia}
-                  className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                  className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors truncate">
                     Aplicar Sepia
                   </button>
+                  <button onClick={handleRemoveImage}
+                  className="mt-4 gap-2 bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600 transition-colors truncate">
+                    Quitar Imagen
+                  </button>
                 </div>
-                <button onClick={handleRemoveImage}
-                 className="mt-4 gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
-                  Quitar Imagen
-                </button>
               </div>
             )}
           </div>
