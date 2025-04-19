@@ -4,7 +4,7 @@ import {
     UserCheck
   } from "lucide-react";
 
-import { Card } from "./ui/Card";
+import { Card } from "./ui/card";
 
 
 const sections = [

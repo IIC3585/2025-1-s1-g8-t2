@@ -107,6 +107,17 @@ function App() {
     }
   };
 
+  const handleDownloadImage = () => {
+    if (newImageUrl) {
+      const link = document.createElement('a');
+      link.href = newImageUrl;
+      // Regex para reemplazar la extensión del archivo original por la nueva entregado por copilot
+      link.download = `${uploadedFile.name.replace(/\.[^/.]+$/, '')}_edited${uploadedFile.name.match(/\.[^/.]+$/)?.[0] || '.jpg'}`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  }
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary to-secondary">
       {/* Hero Section */}
@@ -178,6 +189,14 @@ function App() {
                     Quitar Imagen
                   </Button>
                 </div>
+                {(newImageUrl && newImageFile) && (
+                  <div className="mt-4 text-center">
+                  <Button variant= "outline"
+                    onClick={handleDownloadImage}
+                    className="mt-4 gap-2 text-white bg-zinc-400 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-purple-700 hover:bg-purple-400">
+                      Descargar Imagen
+                  </Button>
+                </div>)}
               </div>
             )}
           </div>

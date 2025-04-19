@@ -25,9 +25,9 @@ export default function TeamSection() {
               {
                 name: "Rafael Fodor",
                 carrer:
-                  "Major en Investigación Operativa, Minor en Tecnologías de la Información",
+                  "Major en Software, Minor en Ingeniería Industrial",
                 image:
-                  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&h=400&auto=format&fit=crop",
+                  "/student_images/rafael_fodor.jpeg",
                 description:
                   "Full-stack developer specializing in AI and machine learning applications.",
               },
