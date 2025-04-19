@@ -1,1 +1,1 @@
-/Users/bruno/Desktop/Web\ avanzado/2025-1-s1-g8-t2/img_processing/target/wasm32-unknown-unknown/release/img_processing.wasm: /Users/bruno/Desktop/Web\ avanzado/2025-1-s1-g8-t2/img_processing/src/lib.rs
+/home/rafaelfodor/Aplicaciones_Web/2025-1-s1-g8-t2/img_processing/target/wasm32-unknown-unknown/release/img_processing.wasm: /home/rafaelfodor/Aplicaciones_Web/2025-1-s1-g8-t2/img_processing/src/lib.rs

@@ -73,3 +73,41 @@ pub fn sepia_filter(image_data: &[u8]) -> Vec<u8> {
     sepia_image.write_to(&mut buf, image::ImageFormat::Png).expect("Failed to write the image");
     buf.into_inner()
 }
+
+#[wasm_bindgen]
+pub fn rgb_glitch_filter(image_data: &[u8]) -> Vec<u8> {
+    let image = image::load_from_memory(image_data).expect("Failed to open the file");
+    
+    let mut rgba = image.to_rgba8();
+    let original = rgba.clone();
+    
+    let width = rgba.width();
+    let height = rgba.height();
+
+    let offset = (width as f32 * 0.05).round() as u32;
+    
+    for y in 0..height {
+        for x in 0..width {
+            let pixel = original.get_pixel(x, y);
+            // Desplazamos el color rojo arriba a la izquierda y el azul abajo a la derecha
+            
+            let r_x_offset = x.saturating_sub(offset);
+            let r_y_offset = y.saturating_sub(offset);
+            let b_x_offset = (x + offset).min(width - 1);
+            let b_y_offset = (y + offset).min(height - 1);
+            let r = original.get_pixel(r_x_offset, r_y_offset)[0];
+            let g = pixel[1]; // Mantenemos el verde
+            let b = original.get_pixel(b_x_offset, b_y_offset)[2];
+
+            // Creamos un nuevo pixel con el color glitch
+            let new_pixel = image::Rgba([r, g, b, pixel[3]]);
+            rgba.put_pixel(x, y, new_pixel);
+        }
+    }
+    // Convierte de nuevo al formato original
+    let glitched_image = DynamicImage::ImageRgba8(rgba);
+
+    let mut buf = Cursor::new(Vec::new());
+    glitched_image.write_to(&mut buf, image::ImageFormat::Png).expect("Failed to write the image");
+    buf.into_inner()
+}

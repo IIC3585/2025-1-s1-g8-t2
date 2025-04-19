@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import init, { grayscale_filter, negative_filter, sepia_filter } from './wasm/img_processing.js';
+import init, { grayscale_filter, negative_filter, sepia_filter, rgb_glitch_filter } from './wasm/img_processing.js';
 import { useDropzone } from 'react-dropzone';
 import StudentCard from './components/student-card.jsx';
 import HeroSection from './components/HeroSection.jsx';
@@ -96,6 +96,26 @@ function App() {
     setNewImageUrl(newImageUrl);
     setNewImageFile(newBlob);
   }
+
+  const handleGlitch = async () => {
+    if (!uploadedImage) return;
+
+    const fileType = uploadedFile.type;
+    const arrayBuffer = await uploadedFile.arrayBuffer();
+    const uint8Array = new Uint8Array(arrayBuffer);
+
+    if (!wasmInitialized) {
+      await init();
+      setWasmInitialized(true);
+    }
+
+    const result = rgb_glitch_filter(uint8Array);
+
+    const newBlob = new Blob([result], { type: fileType || 'image/jpeg' });
+    const newImageUrl = URL.createObjectURL(newBlob);
+    setNewImageUrl(newImageUrl);
+    setNewImageFile(newBlob);
+  }
   
   const handleRemoveImage = () => {
     if (uploadedImage) {
@@ -182,6 +202,11 @@ function App() {
                   className="mt-4 gap-2 text-white bg-zinc-400 whitespace-normal break-words
                   transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-amber-300 hover:bg-yellow-300">
                     Aplicar Sepia
+                  </Button>
+                  <Button variant= "outline"
+                  onClick={handleGlitch}
+                  className="mt-4 gap-2 text-white bg-zinc-400 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-700 hover:bg-blue-600">
+                    Glitch RGB
                   </Button>
                   <Button variant= "outline"
                   onClick={handleRemoveImage}
