@@ -9,6 +9,68 @@ export default defineConfig({
     react(), 
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: 'auto',
+      strategies: 'generateSW',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,wasm,webp,jpg,jpeg,json}'],
+        runtimeCaching: [
+          {
+            // Cache first strategy for images
+            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+              },
+            },
+          },
+          {
+            // Network first for API requests
+            urlPattern: /^https?:\/\/.*\/api\//,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'api-cache',
+              networkTimeoutSeconds: 10,
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 24 * 60 * 60, // 1 day
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+          {
+            // Stale-while-revalidate for other assets
+            urlPattern: /\.(?:js|css)$/,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'assets-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 7 * 24 * 60 * 60, // 1 week
+              },
+            },
+          },
+          {
+            // Default offline fallback
+            urlPattern: ({ request }) => request.mode === 'navigate',
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'navigation-cache',
+              expiration: {
+                maxEntries: 30,
+                maxAgeSeconds: 24 * 60 * 60, // 1 day
+              },
+            },
+          }
+        ],
+        // Skip waiting for service worker activation
+        skipWaiting: true,
+        clientsClaim: true
+      },
       manifest: {
         name: "G8 Filter App", 
         short_name: "G8-FA",
