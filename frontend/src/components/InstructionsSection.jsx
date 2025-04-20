@@ -22,8 +22,7 @@ const sections = [
     icon: UserCheck,
     subsections: [
       { title: "2.1 Personalización de la App", placeholder: `La app está personalizada completamente, con colores personalizados, cuenta con ícono, al ir a dev tools>app, se puede ver el detalle del manifest, y por último, se diseñó un splash screen para cargar la app. `},
-      { title: "2.2 Opción de abrir en inicio para procesas imágenes directamente. ", placeholder: "Se permite a celular agregar como app al inicio del celular, contando con ícono y aspectos personalizados." },
-      { title: "2.3 Funcionamiento Offline", placeholder: 'La aplicación tiene un cache en el service worker, lo que permite que funcione sin necesidad del servidor una vez esta fue instalada.'}
+      { title: "2.2 Funcionamiento Offline", placeholder: 'La aplicación tiene un cache en el service worker, lo que permite que funcione sin necesidad del servidor una vez esta fue instalada.'}
     ]
   }
 ]
