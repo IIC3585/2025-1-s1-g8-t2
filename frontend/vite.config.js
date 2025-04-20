@@ -35,7 +35,7 @@ export default defineConfig({
               networkTimeoutSeconds: 10,
               expiration: {
                 maxEntries: 100,
-                maxAgeSeconds: 24 * 60 * 60, // 1 day
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 day
               },
               cacheableResponse: {
                 statuses: [0, 200],
@@ -50,7 +50,7 @@ export default defineConfig({
               cacheName: 'assets-cache',
               expiration: {
                 maxEntries: 50,
-                maxAgeSeconds: 7 * 24 * 60 * 60, // 1 week
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
               },
             },
           },
@@ -62,7 +62,7 @@ export default defineConfig({
               cacheName: 'navigation-cache',
               expiration: {
                 maxEntries: 30,
-                maxAgeSeconds: 24 * 60 * 60, // 1 day
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
               },
             },
           }
