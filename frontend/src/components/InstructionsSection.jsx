@@ -21,8 +21,8 @@ const sections = [
     title: "2. Aspectos de una PWA",
     icon: UserCheck,
     subsections: [
-      { title: "2.1 Notificaciones push", placeholder: "Se generan notificaciones push cada vez que se modifica una imagen..." },
-      { title: "2.2 Funcionamiento sin Internet", placeholder: "Se pueden editar imágenes sin la necesidad de estar conectado a internet..." },
+      { title: "2.1 Personalización de la App", placeholder: `La app está personalizada completamente, con colores personalizados, cuenta con ícono, al ir a dev tools>app, se puede ver el detalle del manifest, y por último, se diseñó un splash screen para cargar la app. `},
+      { title: "2.2 Opción de abrir en inicio para procesas imágenes directamente. ", placeholder: "Se permite a celular agregar como app al inicio del celular, contando con ícono y aspectos personalizados." },
     ]
   }
 ]

@@ -18,9 +18,9 @@ export default function TeamSection() {
                 carrer:
                   "Major en Investigación Operativa, Minor en Tecnologías de la Información",
                 image:
-                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&h=400&auto=format&fit=crop",
+                  "/student_images/bruno_tike.png",
                 description:
-                  "Former principal with 15 years of experience in educational technology integration.",
+                  "Full-stack developer, expert in UX/UI designs.",
               },
               {
                 name: "Rafael Fodor",
