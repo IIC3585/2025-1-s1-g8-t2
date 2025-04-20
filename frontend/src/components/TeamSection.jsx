@@ -36,7 +36,7 @@ export default function TeamSection() {
                 carrer:
                   "Major en Investigación Operativa, Minor en Tecnologías de la Información",
                 image:
-                  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&h=400&auto=format&fit=crop",
+                  "/student_images/agustin_pini.JPG",
                 description:
                   "Expert in creating intuitive interfaces for educational platforms.",
               },
