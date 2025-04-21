@@ -25,7 +25,7 @@ curl https://sh.rustup.rs -sSf | sh
 source $HOME/.cargo/env
 ```
 
-3. **Hacer build en al archivo img processing**
+3. **Hacer build en la carpeta img processing**
    
 ```bash
 
