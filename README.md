@@ -1,38 +1,66 @@
 ### 2025-1-s1-g8-t2
 
-Versión node >= v18.20.8
+# Progressive Web Application with Web Assembly features
 
-Correr npm install antes de correr servidor.
 
-## Instalar dependencias
+## Instrucciones & Pre-Requisitos
 
+- Versión node >= v18.20.8
+- Rust & cargo. Siguiendo las indicaciones a continuación.
+- wasm-pack. 
+
+### Instalar dependencias
+
+1. **Instalanción de Node.js y paquetes.**:
+   
 ```bash 
 npm install 
 
 ```
 
-## Para celular y mostrar que es responsive: 
+2. **Instalación de Rust & cargo**
 
-   ```bash
+```bash 
+curl https://sh.rustup.rs -sSf | sh
+source $HOME/.cargo/env
+```
 
-   npm run dev -- --host
-
-   ```
-## Para hacer build en al archivo img processing
-
+3. **Hacer build en al archivo img processing**
+   
 ```bash
 
    wasm-pack build --target web --out-dir ../frontend/src/wasm
 
    ```
 
-   ## Aspecto PWA: Personalización completa de la App.
+### Para exponer el host a parte del local: 
 
-   - Ya se encuentran los colores personalizados en tailwind.css, en el archivo index.css.
-   - Se instaló el Vite plugin pwa, que genera inmediatamente el manifest.webmanifest, registrando el service worker. 
+1. **Solo exponer host**
+   
+   ```bash
+
+   npm run dev -- --host
+
+   ```
+2. **Hacer build para producción y exponer host, útil para probar funciones PWA en Mobile.**
+    ```bash
+
+   npm run build && npm run dev -- --host
+
+   ```
+
+## Aspectos PWA. 
+
+1. **Peronalización de la App.**
+   
+   - Se encuentran los colores personalizados en tailwind.css, en el archivo index.css.
+   - Se instaló el Vite plugin pwa, que genera inmediatamente el manifest.webmanifest, registrando el service worker, en este caso sus funciones serán asignadas al archivo Vite.config.
 
 ```bash
 
    npm install vite-plugin-pwa --save-dev
 
    ```
+2. **Caché en el service wroker.**
+
+   - Se ha implementado un caché en el service worker para que fucione sin internet. 
