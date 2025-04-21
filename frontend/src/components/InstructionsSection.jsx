@@ -1,7 +1,7 @@
 import {
     ScrollText,
     FileText,
-    UserCheck
+    FileCode2
   } from "lucide-react";
 
 import { Card } from "./ui/card";
@@ -14,12 +14,12 @@ const sections = [
     subsections: [
       { title: "1.1 Cargar o arrastrar imagen", placeholder: "Debes hacer click en la zona de subida de imágenes o arrastrar una imagen a ella" },
       { title: "1.2 Extensiones permitidas", placeholder: ".gif, .jpeg, .jpg, .png" },
-      { title: "1.3 Filtros y funcionalidades", placeholder: "Inversión de colores, Cambiar escala grises, Aplicar Sepia " }
+      { title: "1.3 Filtros y funcionalidades", placeholder: "Inversión de colores, Cambiar escala grises, Aplicar Sepia y Aplicar Glitch. " }
     ]
   },
   {
     title: "2. Aspectos de una PWA",
-    icon: UserCheck,
+    icon: FileCode2,
     subsections: [
       { title: "2.1 Personalización de la App", placeholder: `La app está personalizada completamente, con colores personalizados, cuenta con ícono, al ir a dev tools>app, se puede ver el detalle del manifest, y por último, se diseñó un splash screen para cargar la app. `},
       { title: "2.2 Funcionamiento Offline", placeholder: 'La aplicación tiene un cache en el service worker, lo que permite que funcione sin necesidad del servidor una vez esta fue instalada.'}
