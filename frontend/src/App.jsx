@@ -187,30 +187,30 @@ function App() {
                 <div className=" grid grid-cols-2 justify-center gap-3">
                   <Button variant="outline"
                   onClick={handleGrayscale}
-                  className="mt-4 gap-2 text-white bg-zinc-400 whitespace-normal break-words
-                  transition-shadow duration-300 cursor-pointer relative hover:shadow-lg hover:shadow-grey-700">
+                  className="text-wrap text-pretty overflow-hidden mt-4 gap-2 text-white bg-zinc-400 whitespace-normal break-words
+                  transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-grey-700">
                    Cambiar a escala de grises
                   </Button>
                   <Button variant= "outline"
                   onClick={handleInvertColors}
-                  className="mt-4 gap-2 text-white bg-zinc-400 whitespace-normal break-words
-                  transition-shadow duration-300 cursor-pointer hover:shadow-lg relative hover:shadow-lime-500 hover:bg-lime-300">
+                  className="text-wrap mt-4 gap-2 text-white bg-zinc-400 whitespace-normal break-words
+                  transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-lime-500 hover:bg-lime-300">
                     Invertir colores
                   </Button>
                   <Button 
                   onClick={handleSepia} variant= "outline"
-                  className="mt-4 gap-2 text-white bg-zinc-400 whitespace-normal break-words
+                  className="text-wrap mt-4 gap-2 text-white bg-zinc-400 whitespace-normal break-words
                   transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-amber-300 hover:bg-yellow-300">
                     Aplicar Sepia
                   </Button>
                   <Button variant= "outline"
                   onClick={handleGlitch}
-                  className="mt-4 gap-2 text-white bg-zinc-400 transition-shadow duration-300 relative cursor-pointer hover:shadow-lg hover:shadow-blue-700 hover:bg-blue-600">
+                  className="text-wrap mt-4 gap-2 text-white bg-zinc-400 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-700 hover:bg-blue-600">
                     Glitch RGB
                   </Button>
                   <Button variant= "outline"
                   onClick={handleRemoveImage}
-                  className="mt-4 gap-2 text-white bg-zinc-400 transition-shadow duration-300 relative cursor-pointer hover:shadow-lg hover:shadow-rose-700 hover:bg-rose-400">
+                  className="text-wrap mt-4 gap-2 text-white bg-zinc-400 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-rose-700 hover:bg-rose-400">
                     Quitar Imagen
                   </Button>
                 </div>
@@ -218,7 +218,7 @@ function App() {
                   <div className="mt-4 text-center">
                   <Button variant= "outline"
                     onClick={handleDownloadImage}
-                    className="mt-4 gap-2 text-white bg-zinc-400 transition-shadow duration-300 relative cursor-pointer hover:shadow-lg hover:shadow-purple-700 hover:bg-purple-400">
+                    className="text-wrap mt-4 gap-2 text-white bg-zinc-400 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-purple-700 hover:bg-purple-400">
                       Descargar Imagen
                   </Button>
                 </div>)}

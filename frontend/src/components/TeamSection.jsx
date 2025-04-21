@@ -43,7 +43,7 @@ export default function TeamSection() {
             ].map((member) => (
               <div
                 key={member.name}
-                className="bg-card/40 backdrop-blur-sm rounded-xl border p-6 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-400"
+                className="bg-card/40 backdrop-blur-sm rounded-xl border p-6 transition-shadow duration-300 cursor-pointer hover:shadow-2xl hover:shadow-blue-400"
               >
                 <img
                   src={member.image}
